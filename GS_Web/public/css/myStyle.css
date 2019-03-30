@@ -1,3 +1,13 @@
+/*
+https://www.iware.com.tw/qa-CSS%E5%AD%97%E5%9E%8B%E5%B5%8C%E5%85%A5%E6%96%B9%E5%BC%8F.html
+*/
+
+@font-face {
+    font-family: 'genkai-mincho_1';
+    src: url('../fonts/genkai-mincho_1.ttf') format("truetype"),
+         url('../fonts/genkai-mincho_1.eot') format("embedded-opentype");
+  }
+
 #teach p{
     color:#000; 
 }
@@ -41,4 +51,8 @@
 }
 .card{
 	vertical-align: 500px;
+}
+
+.audience-box{
+    height: 218px;
 }
