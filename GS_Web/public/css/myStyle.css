@@ -1,0 +1,44 @@
+#teach p{
+    color:#000; 
+}
+
+#teach h4{
+    color:#000; 
+}
+
+#teach h5{
+    color:#000; 
+}
+
+#teach .callbacks_nav {
+    background: transparent url("../images/arrows_black.png") no-repeat right top;
+}
+
+.carousel-control.left {
+    background-image:none;
+    filter: none;
+    background-repeat:none;
+  }
+  .carousel-control.right {
+    right: 0;
+    left: auto;
+    background-image:none;
+    filter: none;
+    background-repeat:none;
+  }
+
+  #text1{
+	text-align: center;
+	padding: 0px 50px ;
+	line-height: 30px;
+	color:#FFF5D6;
+	margin-right: -50px;
+	margin-left: -10px;
+}
+#text2{
+	text-align: center;
+	/* margin-left: 550px; */
+}
+.card{
+	vertical-align: 500px;
+}
