@@ -20,7 +20,10 @@ router.get('/', function (req, res, next) {
         sha_arr.push(sha)
       }
       res.render('index', { arr:arr,sha_arr:sha_arr});
-    }
+    }else{
+		console.log("apiURL error:"+error)
+		res.render('index', { arr:[],sha_arr:[]});
+	}
   });
 });
 

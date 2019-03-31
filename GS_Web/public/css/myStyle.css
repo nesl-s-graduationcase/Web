@@ -53,6 +53,78 @@ https://www.iware.com.tw/qa-CSS%E5%AD%97%E5%9E%8B%E5%B5%8C%E5%85%A5%E6%96%B9%E5%
 	vertical-align: 500px;
 }
 
-.audience-box{
+.community-box img{
+    width: 360px;
     height: 218px;
+}
+
+.community-box div{
+    width: 360px;
+    height: 72.6px;
+    text-align: center;
+    margin:45px 0px;
+}
+
+h3.mytitle{
+    margin-bottom:40px; 
+}
+
+.team_list .mug_shot{
+    margin: 0 10px;
+    width:120px;
+    height: 120px;
+}
+
+.team_list ul li .tech_img{
+    
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width:35px;
+    height: 35px;
+}
+
+.ppt_img{
+    display:block;
+    margin:auto;
+    width:70%;
+}
+
+.team_list_item{
+    float: left;
+}
+
+.community-box .view-caption p{
+  margin-top: 20px;
+}
+
+.downloadBtn:hover{
+ color: #ccc;
+}
+
+/* .navbar{
+    position: fixed;
+    z-index: 500000;
+}
+
+.navbar ul li a{
+    color: #969696;
+    height: 50px;
+}
+
+.banner-info{
+    padding-top: 12em;
+}
+
+.header{
+    width: 100%;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.52);
+} */
+
+@media (max-width:837px){
+.ppt_img{
+    display:block;
+    margin:auto;
+    width:100%;
+}
 }
