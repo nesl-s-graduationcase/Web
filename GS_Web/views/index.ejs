@@ -26,6 +26,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/icofont.min.css" type="text/css" media="all">
 	<!-- //font-awesome icons -->
 	<!-- font -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
@@ -54,48 +55,48 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div id="banner" class="banner">
 		<div class="banner-dot">
 
-<!-- header-top -->
-<div class="header-top">
-		<div class="container">
-			<div class="header-left">
-				<!-- <h1><a href="/">Kapah</a> <span>Utopia</span></a></h1> -->
-			</div>
-			<div class="header-middle">
-				<ul>
-					<li><span class="glyphicon glyphicon-education" aria-hidden="true"></span>108503</li>
-					<li><a href="mailto:info@example.com"><span class="glyphicon glyphicon-envelope"
-								aria-hidden="true"></span>kapah-nesl@boun.cr</a></li>
-				</ul>
-			</div>
-			<div class="header-right">
-				<div class="search">
-					<form action="#" method="post">
-						<input type="search" name="Search" value="Search" onfocus="this.value = '';"
-							onblur="if (this.value == '') {this.value = 'Search';}" required="">
-						<input type="submit" value=" ">
-					</form>
+			<!-- header-top -->
+			<div class="header-top">
+				<div class="container">
+					<div class="header-left">
+						<!-- <h1><a href="/">Kapah</a> <span>Utopia</span></a></h1> -->
+					</div>
+					<div class="header-middle">
+						<ul>
+							<li><span class="glyphicon glyphicon-education" aria-hidden="true"></span>108503</li>
+							<li><a href="mailto:info@example.com"><span class="glyphicon glyphicon-envelope"
+										aria-hidden="true"></span>kapah-nesl@boun.cr</a></li>
+						</ul>
+					</div>
+					<div class="header-right">
+						<div class="search">
+							<form action="#" method="post">
+								<input type="search" name="Search" value="Search" onfocus="this.value = '';"
+									onblur="if (this.value == '') {this.value = 'Search';}" required="">
+								<input type="submit" value=" ">
+							</form>
+						</div>
+					</div>
+					<div class="clearfix"></div>
 				</div>
 			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
-	<!-- //header-top -->
-	<!--header-->
-	<div class="header">
-		<div class="container">
-			<nav class="navbar navbar-default">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse"
-						data-target="#bs-example-navbar-collapse-1">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-				</div>
-				<!--navbar-header-->
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav navbar-right">
+			<!-- //header-top -->
+			<!--header-->
+			<div class="header">
+				<div class="container">
+					<nav class="navbar navbar-default">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse"
+								data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<!--navbar-header-->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav navbar-right">
 								<li><a href="#banner" class="active">主頁</a></li>
 								<li><a href="#news" class="scroll">GitHub新聞</a></li>
 								<li><a href="#story" class="scroll">故事</a></li>
@@ -103,7 +104,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<li><a href="#community" class="scroll">社群</a></li>
 								<li><a href="#character" class="scroll">角色</a></li>
 								<li><a href="#future" class="scroll">未來</a></li>
-	
+
 								<li><a href="#team" class="scroll">團隊</a></li>
 								<!-- <li>
 									<form class="form-inline">
@@ -114,12 +115,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</form>
 								</li> -->
 							</ul>
-					<div class="clearfix"> </div>
+							<div class="clearfix"> </div>
+						</div>
+					</nav>
 				</div>
-			</nav>
-		</div>
-	</div>
-	<!--//header-->
+			</div>
+			<!--//header-->
 
 
 			<!-- banner-info -->
@@ -148,105 +149,115 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- //banner -->
 
 	<!-- News & Events -->
-	<div class="container-fluid">
-		<div id="news" class="updates">
-			<div class="container">
-				<h3 id='text2' class="mytitle">News & Events</h3>
-				<div class="row">
-					<div class="col-md-6">
-						<!-- Example Notifications Card-->
-						<div class="card-header">
-							<i class="fab fa-github"></i> GitHub</div>
-						<div class="list-group list-group-flush small">
-							<% if(arr.length==0){ %>
-							您在一個小時內訪問了60次，超過API流量限制，因此無法顯示Commits
-							<% } %>
-							<% for(var i=0;i<arr.length;i++){ %>
-							<a class="list-group-item list-group-item-action" href="<%= arr[i].html_url %>">
-								<div class="media">
-									<img class="d-flex mr-3 rounded-circle" src="<%= arr[i].author.avatar_url %>" alt=""
-										style="float:left;width: 70px;">
-									<div class="media-body"
-										style="float:left;width: calc(100% - 70px);padding-left:10px">
-										<i class="far fa-arrow-alt-circle-right"></i>
-										<%= sha_arr[i] %>-
-										<strong><%= arr[i].commit.author.name %></strong>
-										<br><%= arr[i].commit.message %>
-										<div class="text-muted smaller"><%= arr[i].commit.author.date %></div>
-									</div>
+	<div id="news" class="updates">
+		<div class="container-fluid">
+			<h3 id='text2' class="mytitle">News & Events<i class="icofont-fire-burn"></i></h3>
+			<div class="row">
+				<div class="col-md-4">
+					<!-- Example Notifications Card-->
+					<div class="card-header">
+						<i class="fab fa-github"></i> GitHub</div>
+					<div class="list-group list-group-flush small">
+						<% if(arr.length==0){ %>
+						您在一個小時內訪問了60次，超過API流量限制，因此無法顯示Commits
+						<% } %>
+						<% for(var i=0;i<arr.length;i++){ %>
+						<a class="list-group-item list-group-item-action" href="<%= arr[i].html_url %>">
+							<div class="media">
+								<% if(arr[i].author!=null){ %>
+								<img class="d-flex mr-3 rounded-circle" src="<%= arr[i].author.avatar_url %>" alt=""
+									style="float:left;width: 70px;">
+
+								<div class="media-body" style="float:left;width: calc(100% - 70px);padding-left:10px">
+									<i class="far fa-arrow-alt-circle-right"></i>
+									<%= sha_arr[i] %>-
+									<strong><%= arr[i].commit.author.name %></strong>
+									<br><%= arr[i].commit.message %>
+									<div class="text-muted smaller"><%= arr[i].commit.author.date %></div>
 								</div>
-							</a>
-							<% }; %>
+								<% } %>
+							</div>
+						</a>
+						<% }; %>
 
 
-							<a class="list-group-item list-group-item-action"
-								href="https://github.com/neslxzhen/GraduationCase/commits/master">View all
-								activity...</a>
-						</div>
+						<a class="list-group-item list-group-item-action"
+							href="https://github.com/neslxzhen/GraduationCase/commits/master">View all
+							activity...</a>
 					</div>
-					<div class="col-md-6">
-						<img src="images/feeling.png" alt="" style="width:100%">
-					</div>
+				</div>
+				<div class="col-md-4">
+					<img src="images/feeling.png" alt="" style="width:100%">
+				</div>
+				<div class="col-md-4">
+					<iframe
+						src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpresidentialoffice.tw&tabs=timeline&width=500&height=700&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=false&appId=256864295257278"
+						width="100%" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+						allowTransparency="true" allow="encrypted-media"></iframe>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- //News & Events -->
 	<!-- story -->
-	<div id="story" style="padding-top:70px;">
-		<div class="testimonial jarallax">
-			<div class="w3-agileits-testimonial">
-				<div class="container">
-					<h3>Story</h3>
-					<div class="wthree-testimonial-grid">
-						<div class="slider">
-							<div class="callbacks_container">
-								<ul class="rslides" id="slider3">
-									<li>
-										<div class="testimonial-top">
-											<i class="fa fa-quote-right" aria-hidden="true"></i>
-											<p>這是個烏煙瘴氣、荒草遍布的失落的部落，前身受到無情戰爭的摧殘</p>
-											<h5></span></h5>
-										</div>
-									</li>
-									<li>
-										<div class="testimonial-top">
-											<i class="fa fa-quote-right" aria-hidden="true"></i>
-											<p>如何用智慧、能力讓殘破不堪的部落死灰復燃</p>
-											<h5></h5>
-										</div>
-									</li>
-									<li>
-										<div class="testimonial-top">
-											<i class="fa fa-quote-right" aria-hidden="true"></i>
-											<p>新酋長們，這是賦予你們的身上的重擔，用你們的手指創造近乎烏托邦的國度! </p>
-											<h5></h5>
-										</div>
-									</li>
-								</ul>
-							</div>
-							<script>
-								// You can also use "$(window).load(function() {"
-								$(function () {
-									// Slideshow 4
-									$("#slider3").responsiveSlides({
-										auto: true,
-										pager: false,
-										nav: true,
-										speed: 500,
-										namespace: "callbacks",
-										before: function () {
-											$('.events').append("<li>before event fired.</li>");
-										},
-										after: function () {
-											$('.events').append("<li>after event fired.</li>");
-										}
-									});
-
-								});
-							</script>
-							<!--banner Slider starts Here-->
+	<div id="story" class="testimonial jarallax">
+		<div class="w3-agileits-testimonial">
+			<div class="container">
+				<h3>Story</h3>
+				<div class="wthree-testimonial-grid">
+					<div class="slider">
+						<div class="callbacks_container">
+							<ul class="rslides" id="slider3">
+								<li>
+									<div class="testimonial-top">
+										<h5><i class="icofont-flame-torch icofont-5x"></i></h5>
+										<p>這世界從來就不存在公平，從你親眼見到所有你與夥伴們打造的一切被毀於一旦的時候開始，人民近乎崩潰卻又無力拯救自己的家。</p>
+										<p>你意識到身為酋長的你不能坐以待斃，要保護自己的部落，不被外在的強大勢力給淹沒掉。殘破不堪的部落、一敗塗地的你，不明白國王，為何要如此痛恨童話書，明明它是那麼的美好？
+										</p>
+										<p>難道一切都是自己的自作多情?</p>
+									</div>
+								</li>
+								<li>
+									<div class="testimonial-top">
+										<h5><i class="icofont-burglar icofont-5x" aria-hidden="true"></i></h5>
+										<p>你的摯友，部落裡的商人，在部落被毀掉之前突然帶著許多沒賣完的童話書匆匆離開了，難道你被背叛了嗎？</p>
+										<p>原來如此。這世界終究是現實的，為了利益，為了鞏固國家的地位，犧牲、背棄小部落是有必要的，你咬牙切齒的把過去象徵和平的圖騰砸得粉碎，你的部落絕不能再次成為主流的奴隸，是時候該反抗了。
+										</p>
+										<h5></h5>
+										<p>難道你還想再次相信他們?</p>
+									</div>
+								</li>
+								<li>
+									<div class="testimonial-top">
+										<h5><i class="icofont-law-protect icofont-5x" aria-hidden="true"></i></h5>
+										<p>站起來！不願做奴隸的你！用我們的屍體，疊出童話裡的未來！</p>
+										<p>你意識到身為酋長的你不能坐以待斃，要保護自己的部落，不被外在的強大勢力給淹沒掉。</p>
+										<p>木棉飛遍客座山林，戰士踏遍東道王都。</p>
+									</div>
+								</li>
+							</ul>
 						</div>
+						<script>
+							// You can also use "$(window).load(function() {"
+							$(function () {
+								// Slideshow 4
+								$("#slider3").responsiveSlides({
+									auto: true,
+									pager: false,
+									nav: true,
+									speed: 500,
+									namespace: "callbacks",
+									before: function () {
+										$('.events').append("<li>before event fired.</li>");
+									},
+									after: function () {
+										$('.events').append("<li>after event fired.</li>");
+									}
+								});
+
+							});
+						</script>
+						<!--banner Slider starts Here-->
 					</div>
 				</div>
 			</div>
@@ -399,12 +410,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<h3 class="mytitle">Community</h3>
 			<div class="row">
 				<div class="col-md-4">
-					<div class="community-box">
-						<div>
-							小黨派、地方聲音<br>
-							需要號召、力量者
-						</div>
-					</div>
 					<div class="wpf-demo-4 community-box">
 						<a href="images/活動者.png" class="jzBoxLink item-hover"
 							title="Etiam pulvinar metus neque eget porttitor massa.">
@@ -413,6 +418,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<p>活動者</p>
 							</div>
 						</a>
+					</div>
+					<div class="community-box">
+						<div>
+							小黨派、地方聲音<br>
+							需要號召、力量者
+						</div>
 					</div>
 
 				</div>
@@ -436,11 +447,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 
 				<div class="col-md-4">
-					<div class="community-box">
-						<div>
-							想與他人分享意見的人
-						</div>
-					</div>
+
 
 					<div class="wpf-demo-4 community-box">
 						<a href="images/分享者.jpg" class="jzBoxLink item-hover"
@@ -451,6 +458,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</div>
 						</a>
 					</div>
+					<div class="community-box">
+						<div>
+							想與他人分享意見的人
+						</div>
+					</div>
 				</div>
 
 			</div>
@@ -458,10 +470,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<!-- //Community -->
 	<!--Point 系統特色-->
-	<div id="point" class="team">
+	<div id="point" class="team ppt">
 		<div class="container">
 			<h3 class="mytitle">Point</h3>
-			<img class="ppt_img" src="images/系統特色.png" />
+			<img src="images/系統特色.png" />
 		</div>
 	</div>
 	<!--Point-->
@@ -490,7 +502,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							title="Maecenas sodales tortor ac ligula ultrices dictum et quis urna.">
 							<img src="images/g1.jpg" class="img-responsive" alt=" " />
 							<div class="view-caption">
-								<p>Click Here</p>
+								<p>部落</p>
 							</div>
 						</a>
 					</div>
@@ -499,7 +511,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							title="Etiam pulvinar metus neque eget porttitor massa.">
 							<img src="images/g2.jpg" alt=" " class="img-responsive" />
 							<div class="view-caption">
-								<p>Click Here</p>
+								<p>商人</p>
 							</div>
 						</a>
 					</div>
@@ -508,7 +520,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							title="Etiam pulvinar metus neque eget porttitor massa.">
 							<img src="images/g7.jpg" alt=" " class="img-responsive" />
 							<div class="view-caption">
-								<p>Click Here</p>
+								<p>--</p>
 							</div>
 						</a>
 					</div>
@@ -520,7 +532,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							title="Etiam pulvinar metus neque eget porttitor massa.">
 							<img src="images/g3.jpg" alt=" " class="img-responsive" />
 							<div class="view-caption">
-								<p>Click Here</p>
+								<p>巫師</p>
 							</div>
 						</a>
 					</div>
@@ -529,7 +541,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							title="Etiam pulvinar metus neque eget porttitor massa.">
 							<img src="images/g4.jpg" alt=" " class="img-responsive" />
 							<div class="view-caption">
-								<p>Click Here</p>
+								<p>酋長</p>
 							</div>
 						</a>
 					</div>
@@ -541,7 +553,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							title="Etiam pulvinar metus neque eget porttitor massa.">
 							<img src="images/g6.jpg" alt=" " class="img-responsive" />
 							<div class="view-caption">
-								<p>Click Here</p>
+								<p>王都</p>
 							</div>
 						</a>
 					</div>
@@ -550,7 +562,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							title="Etiam pulvinar metus neque eget porttitor massa.">
 							<img src="images/g8.jpg" alt=" " class="img-responsive" />
 							<div class="view-caption">
-								<p>Click Here</p>
+								<p>國王</p>
 							</div>
 						</a>
 					</div>
@@ -559,7 +571,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							title="Etiam pulvinar metus neque eget porttitor massa.">
 							<img src="images/g5.jpg" alt=" " class="img-responsive" />
 							<div class="view-caption">
-								<p>Click Here</p>
+								<p>--</p>
 							</div>
 						</a>
 					</div>
@@ -572,10 +584,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<!-- //Character -->
 	<!-- future -->
-	<div id="future" class="team">
+	<div id="future" class="team ppt">
 		<div class="container">
 			<h3 class="mytitle">future</h3>
-			<img src="images/未來.png" class="ppt_img" />
+			<img src="images/未來.png" />
 		</div>
 	</div>
 	<!-- //future -->
@@ -585,63 +597,68 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<h3>Our Team</h3>
 			<div class="agileinfo-team-grids">
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md-7">
 						<img id="team_picure" src="images/team.jpg" alt="" style="width: 100%" />
 					</div>
-					<div class="col-md-6 team_list team-social-grids">
-						<div class="team_list_item">
-							<img src="images/44.jpg" alt="" class="mug_shot" />
-							<h5>10456044 張震龍</h5>
-							<ul>
 
-								<li><img src="images/unity.png" alt="" class="tech_img" /></li>
-								<li><img src="images/web.png" alt="" class="tech_img" /></li>
-								<li><img src="images/light.png" alt="" class="tech_img" /></li>
-							</ul>
-						</div>
-						<div class="team_list_item">
-							<img src="images/t2.jpg" alt="" class="mug_shot" />
-							<h5>10456006 陳頤永</h5>
-							<ul>
-								<li><img src="images/topic.png" alt="" class="tech_img" /></li>
-								<li><img src="images/doc.png" alt="" class="tech_img" /></li>
-								<li><img src="images/db.png" alt="" class="tech_img" /></li>
-							</ul>
-						</div>
-						<div class="team_list_item">
-							<img src="images/林佳逸.jpg" alt="" class="mug_shot" />
-							<h5>美術指導:林佳逸</h5>
-							<ul>
-								<li><img src="images/painter.png" alt="" class="tech_img" /></li>
-							</ul>
-						</div>
+					<div class="col-md-5 team-social-grids">
+						<div class="row">
+							<div class="col-md-4 wthree-team-grid">
+								<img src="images/44.jpg" alt="" class="mug_shot" />
+								<h5>10456044 張震龍</h5>
+								<ul>
 
-
-
-						<div class="team_list_item">
-							<img src="images/38.png" alt="" class="mug_shot" />
-							<h5>10456038 黃安妤</h5>
-							<ul>
-								<li><img src="images/doc.png" alt="" class="tech_img" /></li>
-								<li><img src="images/video.png" alt="" class="tech_img" /></li>
-							</ul>
-						</div>
-						<div class="team_list_item">
-							<img src="images/39.jpg" alt="" class="mug_shot" />
-							<h5>10456039 卓依</h5>
-							<ul>
-								<li><img src="images/painter.png" alt="" class="tech_img" /></li>
-							</ul>
-						</div>
-						<div class="team_list_item">
-							<img src="images/teacher.jfif" alt="" class="mug_shot" />
-							<h5>指導老師:夏德威</h5>
-							<ul>
-								<li></li>
-							</ul>
-						</div>
+									<li><img src="images/unity.png" alt="" class="tech_img" /></li>
+									<li><img src="images/web.png" alt="" class="tech_img" /></li>
+									<li><img src="images/light.png" alt="" class="tech_img" /></li>
+								</ul>
+							</div>
+							<div class="col-md-4 wthree-team-grid">
+								<img src="images/t2.jpg" alt="" class="mug_shot" />
+								<h5>10456006 陳頤永</h5>
+								<ul>
+									<li><img src="images/topic.png" alt="" class="tech_img" /></li>
+									<li><img src="images/doc.png" alt="" class="tech_img" /></li>
+									<li><img src="images/db.png" alt="" class="tech_img" /></li>
+								</ul>
+							</div>
+							<div class="col-md-4 wthree-team-grid">
+								<img src="images/林佳逸.jpg" alt="" class="mug_shot" />
+								<h5>美術指導:林佳逸</h5>
+								<ul>
+									<li><img src="images/painter.png" alt="" class="tech_img" /></li>
+								</ul>
+							</div>
 
 
+						</div>
+						<div class="row">
+							<div class="col-md-4 wthree-team-grid">
+								<img src="images/38.png" alt="" class="mug_shot" />
+								<h5>10456038 黃安妤</h5>
+								<ul>
+									<li><img src="images/doc.png" alt="" class="tech_img" /></li>
+									<li><img src="images/video.png" alt="" class="tech_img" /></li>
+								</ul>
+							</div>
+							<div class="col-md-4 wthree-team-grid">
+								<img src="images/39.jpg" alt="" class="mug_shot" />
+								<h5>10456039 卓依</h5>
+								<div class="team-social-grids">
+									<ul>
+										<li><img src="images/painter.png" alt="" class="tech_img" /></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-4 wthree-team-grid">
+								<img src="images/teacher.jfif" alt="" class="mug_shot" />
+								<h5>指導老師:夏德威</h5>
+								<ul>
+									<li></li>
+								</ul>
+							</div>
+
+						</div>
 					</div>
 				</div>
 				<div class="clearfix"> </div>

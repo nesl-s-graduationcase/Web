@@ -69,28 +69,23 @@ h3.mytitle{
     margin-bottom:40px; 
 }
 
-.team_list .mug_shot{
-    margin: 0 10px;
-    width:120px;
-    height: 120px;
+.wthree-team-grid .mug_shot{
+    width:140px;
+    height: 140px;
 }
 
-.team_list ul li .tech_img{
+.wthree-team-grid li .tech_img{
     
-    margin-top: 10px;
+    margin-top: 5px;
     margin-bottom: 20px;
-    width:35px;
-    height: 35px;
+    width:30px;
+    height: 30px;
 }
 
-.ppt_img{
+.ppt img{
     display:block;
     margin:auto;
     width:70%;
-}
-
-.team_list_item{
-    float: left;
 }
 
 .community-box .view-caption p{
@@ -121,10 +116,13 @@ h3.mytitle{
     background-color: rgba(0, 0, 0, 0.52);
 } */
 
-@media (max-width:837px){
-.ppt_img{
+@media (max-width:991px){
+.ppt img{
     display:block;
     margin:auto;
+    width:100%;
+}
+.ppt .container{
     width:100%;
 }
 }
