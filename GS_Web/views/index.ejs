@@ -14,7 +14,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<meta name="keywords" content="Kapah" />
 	<script
 		type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-	<!-- bootstrap-css -->
+		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"/>
+		<!-- bootstrap-css -->
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"
 		media="all" />
 	<!--// bootstrap-css -->
@@ -23,9 +24,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<link rel="stylesheet" href="css/myStyle.css" type="text/css" media="all" />
 	<!--// css -->
 	<!-- font-awesome icons -->
-	<!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/icofont.min.css" type="text/css" media="all">
 	<!-- //font-awesome icons -->
 	<!-- font -->
@@ -61,21 +60,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="header-left">
 						<!-- <h1><a href="/">Kapah</a> <span>Utopia</span></a></h1> -->
 					</div>
-					<div class="header-middle">
+					<div class="header-middle" style="margin-top:0.5em;">
 						<ul>
 							<li><span class="glyphicon glyphicon-education" aria-hidden="true"></span>108503</li>
 							<li><a href="mailto:info@example.com"><span class="glyphicon glyphicon-envelope"
 										aria-hidden="true"></span>kapah-nesl@boun.cr</a></li>
 						</ul>
 					</div>
-					<div class="header-right">
-						<div class="search">
-							<form action="#" method="post">
-								<input type="search" name="Search" value="Search" onfocus="this.value = '';"
-									onblur="if (this.value == '') {this.value = 'Search';}" required="">
-								<input type="submit" value=" ">
-							</form>
-						</div>
+						<div class="social" style="margin:0;">
+					<ul>
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-rss"></i></a></li>
+						<li><a href="#"><i class="fa fa-vk"></i></a></li>
+					</ul>
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -104,16 +102,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<li><a href="#community" class="scroll">社群</a></li>
 								<li><a href="#character" class="scroll">角色</a></li>
 								<li><a href="#future" class="scroll">未來</a></li>
-
 								<li><a href="#team" class="scroll">團隊</a></li>
-								<!-- <li>
-									<form class="form-inline">
-										<input class="form-control mr-sm-2" type="text" />
-										<button class="btn btn-primary my-2 my-sm-0" type="submit">
-											Search
-										</button>
-									</form>
-								</li> -->
 							</ul>
 							<div class="clearfix"> </div>
 						</div>
@@ -175,7 +164,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<br><%= arr[i].commit.message %>
 									<div class="text-muted smaller"><%= arr[i].commit.author.date %></div>
 								</div>
-								<% } %>
+								<% }else{ %>
+									<div class="media-body" style="float:left;width: calc(100% - 70px);padding-left:10px">
+										<i class="far fa-arrow-alt-circle-right"></i>
+										<%= sha_arr[i] %>-
+										<strong></strong>
+										<br><%= arr[i].commit.message %>
+										<div class="text-muted smaller"></div>
+									</div>
+									<% } %>
 							</div>
 						</a>
 						<% }; %>

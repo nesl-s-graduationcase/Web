@@ -39,11 +39,11 @@ https://www.iware.com.tw/qa-CSS%E5%AD%97%E5%9E%8B%E5%B5%8C%E5%85%A5%E6%96%B9%E5%
 
   #text1{
 	text-align: center;
-	padding: 0px 50px ;
+	padding: 0px 30px ;
 	line-height: 30px;
 	color:#FFF5D6;
-	margin-right: -50px;
-	margin-left: -10px;
+	/* margin-right: -50px;
+	margin-left: -10px; */
 }
 #text2{
 	text-align: center;
