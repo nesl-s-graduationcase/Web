@@ -14,8 +14,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<meta name="keywords" content="Kapah" />
 	<script
 		type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"/>
-		<!-- bootstrap-css -->
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+	<!-- bootstrap-css -->
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" rel="stylesheet" type="text/css"
 		media="all" />
 	<!--// bootstrap-css -->
@@ -50,6 +50,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 
 <body>
+	<!-- <span class="sc_top" style="z-index:500000000000000000;position:fixed;">0</span> -->
 	<!-- banner -->
 	<div id="banner" class="banner">
 		<div class="banner-dot">
@@ -67,13 +68,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										aria-hidden="true"></span>kapah-nesl@boun.cr</a></li>
 						</ul>
 					</div>
-						<div class="social" style="margin:0;">
-					<ul>
-						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fa fa-rss"></i></a></li>
-						<li><a href="#"><i class="fa fa-vk"></i></a></li>
-					</ul>
+					<div class="social" style="margin:0;">
+						<ul>
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fa fa-rss"></i></a></li>
+							<li><a href="#"><i class="fa fa-vk"></i></a></li>
+						</ul>
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -110,8 +111,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 			</div>
 			<!--//header-->
-
-
 			<!-- banner-info -->
 			<div class="banner-info">
 				<div class="container">
@@ -145,7 +144,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-md-4">
 					<!-- Example Notifications Card-->
 					<div class="card-header">
-						<i class="fab fa-github"></i> GitHub</div>
+						<i class="fa fa-github" aria-hidden="true"></i> GitHub</div>
 					<div class="list-group list-group-flush small">
 						<% if(arr.length==0){ %>
 						您在一個小時內訪問了60次，超過API流量限制，因此無法顯示Commits
@@ -165,14 +164,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<div class="text-muted smaller"><%= arr[i].commit.author.date %></div>
 								</div>
 								<% }else{ %>
-									<div class="media-body" style="float:left;width: calc(100% - 70px);padding-left:10px">
-										<i class="far fa-arrow-alt-circle-right"></i>
-										<%= sha_arr[i] %>-
-										<strong></strong>
-										<br><%= arr[i].commit.message %>
-										<div class="text-muted smaller"></div>
-									</div>
-									<% } %>
+								<div class="media-body" style="float:left;width: calc(100% - 70px);padding-left:10px">
+									<i class="far fa-arrow-alt-circle-right"></i>
+									<%= sha_arr[i] %>-
+									<strong></strong>
+									<br><%= arr[i].commit.message %>
+									<div class="text-muted smaller"></div>
+								</div>
+								<% } %>
 							</div>
 						</a>
 						<% }; %>
@@ -279,7 +278,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<div class="services-grid1">
 									<div class="col-md-4 services-grid-right agile-services-grid-right">
 										<div class="services-grid-right-grid hvr-radial-out">
-											<img src="images/books-stack-of-three.png">
+											<img src="images/story.png">
 											<!-- <span class="glyphicon glyphicon-grain" aria-hidden="true"></span> -->
 										</div>
 									</div>
@@ -347,10 +346,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</div>
 									<div class="col-md-8 services-grid-left services-grid-left1">
 										<h4>獵團</h4>
-										<p>Itaque earum rerum hic tenetur a sapiente
-											delectus, ut aut reiciendis voluptatibus maiores alias
-											consequatur
-											aut perferendis doloribus asperiores repellat.</p>
+										<p>整體上與祭團對立，和他們比起來有著懸殊的財富差距，屬於弱勢族群。</p>
 									</div>
 									<div class="clearfix"> </div>
 								</div>
@@ -631,7 +627,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</div>
 							</div>
 							<div class="col-md-4 wthree-team-grid">
-								<img src="images/worlder.jfif" alt="" class="mug_shot" />
+								<img src="images/teacher.jfif" alt="" class="mug_shot" />
 								<h5>指導老師:夏德威</h5>
 								<ul>
 									<li></li>
@@ -683,6 +679,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<script src="js/responsiveslides.min.js"></script>
 	<script type="text/javascript" src="js/move-top.js"></script>
 	<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript">
+
+		$(window).scroll(function () {
+			if($(window).width()>=990){
+			if ($(window).scrollTop() >= 100) {
+				// $(".sc_top").text("100");
+				$(".header").css({"position":"fixed","background-color":"rgba(225, 225, 225, 0.5)"});
+			}else{
+				// $(".sc_top").text("0");
+				$(".header").css({"position":"static","top":"0","background-color":"transparent","width":"100%"});
+			}
+		}
+		}); 
+	</script>
 </body>
 
 </html>

@@ -8,6 +8,11 @@ https://www.iware.com.tw/qa-CSS%E5%AD%97%E5%9E%8B%E5%B5%8C%E5%85%A5%E6%96%B9%E5%
          url('../fonts/genkai-mincho_1.eot') format("embedded-opentype");
   }
 
+.header{
+    z-index: 5000000000000000000000000000000000;
+    background-color: 
+}
+
 #teach p{
     color:#000; 
 }
