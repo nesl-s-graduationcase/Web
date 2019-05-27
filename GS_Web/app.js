@@ -22,13 +22,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/about', require('./routes/about'));
-app.use('/appointment', require('./routes/appointment'));
-app.use('/blog', require('./routes/blog'));
+app.use('/topicmaker', require('./routes/topicmaker'));
 app.use('/blog-single', require('./routes/blog-single'));
-app.use('/contact', require('./routes/contact'));
+app.use('/forum', require('./routes/forum'));
 app.use('/doctor', require('./routes/doctor'));
 app.use('/market', require('./routes/market'));
-app.use('/pricing', require('./routes/pricing'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
