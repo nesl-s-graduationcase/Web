@@ -1,0 +1,28 @@
+
+<!-- 分頁導覽列 -->
+<div class="row no-gutters my-5">
+    <div class="col text-center">
+        <div class="block-27">
+            <ul>
+                <li>第 <%=data.pageNo%> 頁</li>
+
+                <% if(data.startPage>1){ %>
+                <li><a href="/<%=name%>?pageNo=<%=(data.startPage-data.navSegments)%>"><i
+                            class="ion-ios-arrow-back"></i></a></li>
+                <% } %>
+
+                <% for(var i=data.startPage; i<data.startPage+data.navSegments; i++) {%>
+                <% if(i<=data.totalPage){ %>
+                <li class="<%if(i==data.pageNo){ %>active<%}%>"><a href="/<%=name%>?pageNo=<%=i%>">
+                    <%=i%>
+                </a></li>
+                <% }} %> 
+                    
+                    <% if(data.startPage+data.navSegments<=data.totalPage){ %>
+                        <li><a href="/<%=name%>?pageNo=<%=(data.startPage+data.navSegments)%>"> <i class="ion-ios-arrow-forward"></i></a>
+                    </li>
+                    <% } %>
+            </ul>
+        </div>
+    </div>
+</div>

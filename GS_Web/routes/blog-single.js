@@ -49,36 +49,19 @@ var user = async function (id) {
   return result;
 }
 
-var comments = async function (id) {
-  var result = {};
-  await query('select * from combination;')
-      .then((data) => {
-        var data2=data;
-        for(var i=0;i<data.length;i++){
-          data2[i].reply =JSON.parse(data[i].reply);
-        }
-        data=data2;
-          result = {code:0, data:data};  
-      }, (error) => {
-        console.log(error)
-          result = {code:-1};
-      });
-
-  return result;
-}
-
 router.get('/', function (req, res, next) {
   var id = Number(req.param('id'));  //頁碼, 轉數字
   if (isNaN(id) || id < 1) {
     pageNo = 1;
   }
   blog(id).then(blog_data => {
+    var b= blog_data.data[0]
+    b.reply=JSON.parse(b.reply)
+    blog_data.data[0]=b
     tag(id).then(tag_data => {
       all_tag().then(all_tag => {
         user(blog_data.data[0].user_id).then(user_set => {
-          comments(id).then(comments => {
-            res.render('blog-single', { blog_data: blog_data, tag_data: tag_data,all_tag:all_tag,user_set:user_set ,comments:comments});
-          })
+          res.render('blog-single', { blog_data: blog_data, tag_data: tag_data,all_tag:all_tag,user_set:user_set});
         })
       })
     })
