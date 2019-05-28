@@ -1,0 +1,22 @@
+.edit .drag{
+    position: relative;
+    top:none;
+    right: none;
+
+}
+
+.sidebar-nav .box{
+    height: none;
+}
+
+html,body{
+    padding-top: 0px;
+    min-height:0px !important;
+    margin: 0;
+}
+
+.sidebar-nav{
+    position: relative;
+}
+
+.container { width:auto; margin:none;}
