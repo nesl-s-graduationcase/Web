@@ -24,7 +24,6 @@ app.use('/users', usersRouter);
 app.use('/about', require('./routes/about'));
 app.use('/topicmaker', require('./routes/topicmaker'));
 app.use('/blog-single', require('./routes/blog-single'));
-app.use('/forum', require('./routes/forum'));
 app.use('/doctor', require('./routes/doctor'));
 app.use('/market', require('./routes/market'));;
 
