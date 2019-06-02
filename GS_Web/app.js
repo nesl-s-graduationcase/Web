@@ -24,8 +24,7 @@ app.use('/users', usersRouter);
 app.use('/about', require('./routes/about'));
 app.use('/topicmaker', require('./routes/topicmaker'));
 app.use('/blog-single', require('./routes/blog-single'));
-app.use('/doctor', require('./routes/doctor'));
-app.use('/market', require('./routes/market'));;
+app.use('/search', require('./routes/search'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

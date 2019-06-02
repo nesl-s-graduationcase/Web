@@ -1,4 +1,4 @@
-/* .testimony-section .owl-carousel .owl-stage-outer{
-    padding: 0;
-} */
-
+.owl-carousel .owl-stage, .owl-carousel.owl-drag .owl-item{
+    -ms-touch-action: auto;
+        touch-action: auto;
+}

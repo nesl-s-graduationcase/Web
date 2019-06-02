@@ -3,7 +3,7 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="/">
     <img src="imgs/kapah_logo.png" style="width: 150px;">
     </a>
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -11,18 +11,28 @@
     <ul class="navbar-nav">
       <li class="nav-item <%if(name=='index'){%>active<%}%>" ><a href="/" class="nav-link pl-0">Home</a></li>
       <li class="nav-item <%if(name=='about'){%>active<%}%>"><a href="/about" class="nav-link">About</a></li>
-      <li class="nav-item <%if(name=='doctor'){%>active<%}%>"><a href="/doctor" class="nav-link">Doctor</a></li>
-      <li class="nav-item <%if(name=='market'){%>active<%}%>"><a href="/market" class="nav-link">Market</a></li>
          
     </ul>
        
         <ul class="navbar-nav ml-md-auto">
-            <form action="#" class="search-form">
+            <!-- <form action="/search" class="search-form">
                 <div class="form-group">
                   <span class="icon icon-search"></span>
-                  <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
+                  <input type="text" class="form-control" placeholder="Type a keyword and hit enter" name="tag">
                 </div>
-              </form>
+              </form> -->
+              <script>
+                  (function() {
+                    var cx = '000793791491526595598:s_dmphwvbii';
+                    var gcse = document.createElement('script');
+                    gcse.type = 'text/javascript';
+                    gcse.async = true;
+                    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(gcse, s);
+                  })();
+                </script>
+                <gcse:search></gcse:search>
         <p class="button-custom order-lg-last mb-0" style="padding: 15px;">
             <a href="/Download" class="btn btn-secondary py-2 px-3">Download</a>
             <a href="/topicmaker" class="btn btn-secondary py-2 px-3">Make A Topic</a>

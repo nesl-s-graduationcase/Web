@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('include/head', {}); %>
+  </head>
+  <body>
+      <%- include('include/nav', {name:undefined}); %>
+    <section class="ftco-section bg-light">
+			<div class="container">
+				<div class="row">
+            <% if(search_result.code>=0){
+              search_result.data.forEach(d => { %>
+          <div class="col-md-4 ftco-animate">
+            <div class="blog-entry">
+              <a href="/blog-single?id=<%=d.blog_id%>" class="block-20" style="background-image: url('imgs/image_1.jpg');">
+							
+              </a>
+              <div class="text bg-white p-4">
+                <h3 class="heading"><a href="#"></a><%=d.blog_title%></a></h3>
+                <%if(typeof d.body_html != null){%>
+                <%- d.short_html%>
+                <%}%>
+                <div class="d-flex align-items-center mt-4">
+	                <p class="mb-0"><a href="/blog-single?id=<%=d.blog_id%>" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+	                <p class="ml-auto mb-0">
+	              
+	                </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <%})}else{%>
+            err
+            <% }; %>
+          
+        </div>
+				<%- include('include/page_nav', {name:"search",data:search_result}); %>
+			</div>
+    </section>
+    
+    <%- include('include/ad-banner', {}); %>
+    <%- include('include/foot', {}); %>
+  <!-- loader -->
+  <%- include('include/loader', {}); %>
+    
+  </body>
+</html>

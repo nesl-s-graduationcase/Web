@@ -6,12 +6,14 @@
 
 <body>
 	<%- include('include/nav', {name:undefined}); %>
-	<%- include('include/hero-wrap', {name:blog_data.data[0].combination_title}); %>
+	<%- include('include/hero-wrap', {name:blog_data.data[0].blog_title}); %>
 	<section class="ftco-section ftco-no-pt ftc-no-pb">
 		<div class="container">
 			<div class="row no-gutters">
 				<div class="col-md-8 ">
-					<img src="imgs/bg_1.jpg" alt="Image placeholder" class="img-fluid mb-4">
+					<p>更新時間：<%=blog_data.data[0].last_update%></p>
+					<!-- <img src="imgs/bg_1.jpg" alt="Image placeholder" class="img-fluid mb-4"> -->
+					<iframe width="100%" height="100%" src="https://www.youtube.com/embed/dVlb7m-NWB0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 				<div class="col-md-4 ">
 					<div class="sidebar-box ftco-animate fadeInUp ftco-animated" style="margin-bottom:0;">
@@ -24,7 +26,7 @@
 						</div>
 						<ul class="tagcloud m-0 p-0">
 							<% if(blog_tag.code>=0){blog_tag.data.forEach(d => { %>
-							<a href="#" class="tag-cloud-link"><%=d.tag_title%></a>
+							<a href="/" class="tag-cloud-link"><%=d.tag_title%></a>
 							<%})}else{%>null<% }; %>
 						</ul>
 					</div>
@@ -34,26 +36,27 @@
 			<!-- 近日更新 -->
 			<div class="row no-gutters">
 				<div class="col-md-9 ">
+						<p>近日更新</p>
 					<div class="row" style="margin-bottom: 70px;">
-							<% last_update_blogs.data.forEach(d => {  %>
+							<% latest_blogs.data.forEach(d => {  %>
 						<div class="col-md-4 ftco-animate fadeInUp ftco-animated">
 							<div class="pricing-entry pb-5 text-center">
 								<div>
-									<h3 class="mb-4"><%=d.combination_title%></h3>
+									<h3 class="mb-4"><%=d.blog_title%></h3>
 									<img src="imgs/dept-2.jpg" style="width: 100%;">
 								</div>
 								
 									
 								<%
 								function delHtmlTag(str){
-									return str.replace(/<[^>]+>/g,"");//去掉所有的html标记
+									return str.replace(/<[^>]+>/g,"");//去掉所有的html標記
 								  }
-									var sTest = delHtmlTag(d.combination_blog_body).substring(10,30);
+									var sTest = delHtmlTag(d.short_html).substring(10,30);
 								%>
 								<p><%= sTest %></p>
 								
-								<p class="button text-center"><a href="#" class="btn btn-primary px-4 py-3">Get
-										Offer</a>
+								<p class="button text-center"><a href="/blog-single?id=<%=d.blog_id%>" class="btn btn-primary px-4 py-3">
+									<%= d.blog_title %></a>
 								</p>
 							</div>
 						</div>
@@ -74,7 +77,7 @@
 		</div>
 	</section>
 
-	<%- blog_data.data[0].combination_blog_body%>
+	<%- blog_data.data[0].body_html%>
 
 	<section class="ftco-section pt-2 pb-2">
 		<div class="container">
@@ -103,76 +106,37 @@
 						<h3 class="mb-4">推薦</h3>
 					</div>
 					<div class="carousel-testimony owl-carousel">
-
-						<div class="item">
-							<div class="testimony-wrap d-flex">
-								test
-							</div>
-						</div>
-
+						<% recommend_blog.data.forEach(b => {  %>
 						<div class="item">
 							<div class="testimony-wrap d-flex">
 								<div class="row" style="margin-bottom: 70px;">
-									<div class="col-md-4 ftco-animate">
-										<div class="pricing-entry pb-5 text-center">
-											<div>
-												<h3 class="mb-4">Basic</h3>
-												<p><span class="price">$24.50</span> <span class="per">/
-														session</span></p>
+										<% b.forEach(d => {  %>
+											<div class="col-md-4 ftco-animate fadeInUp ftco-animated">
+												<div class="pricing-entry pb-5 text-center">
+													<div>
+														<h3 class="mb-4"><%=d.combination_title%></h3>
+														<img src="imgs/dept-2.jpg" style="width: 100%;">
+													</div>
+													
+														
+													<%
+													function delHtmlTag(str){
+														return str.replace(/<[^>]+>/g,"");//去掉所有的html標記
+													  }
+														var sTest = delHtmlTag(d.short_html).substring(10,30);
+													%>
+													<p><%= sTest %></p>
+													
+													<p class="button text-center"><a href="/blog-single?id=<%=d.blog_id%>" class="btn btn-primary px-4 py-3">
+														<%= d.blog_title %></a>
+													</p>
+												</div>
 											</div>
-											<ul>
-												<li>Diagnostic Services</li>
-												<li>Professional Consultation</li>
-												<li>Tooth Implants</li>
-												<li>Surgical Extractions</li>
-												<li>Teeth Whitening</li>
-											</ul>
-											<p class="button text-center"><a href="#"
-													class="btn btn-primary px-4 py-3">Get Offer</a>
-											</p>
-										</div>
-									</div>
-									<div class="col-md-4 ftco-animate">
-										<div class="pricing-entry pb-5 text-center">
-											<div>
-												<h3 class="mb-4">Standard</h3>
-												<p><span class="price">$34.50</span> <span class="per">/
-														session</span></p>
-											</div>
-											<ul>
-												<li>Diagnostic Services</li>
-												<li>Professional Consultation</li>
-												<li>Tooth Implants</li>
-												<li>Surgical Extractions</li>
-												<li>Teeth Whitening</li>
-											</ul>
-											<p class="button text-center"><a href="#"
-													class="btn btn-primary px-4 py-3">Get Offer</a>
-											</p>
-										</div>
-									</div>
-									<div class="col-md-4 ftco-animate">
-										<div class="pricing-entry active pb-5 text-center">
-											<div>
-												<h3 class="mb-4">Premium</h3>
-												<p><span class="price">$54.50</span> <span class="per">/
-														session</span></p>
-											</div>
-											<ul>
-												<li>Diagnostic Services</li>
-												<li>Professional Consultation</li>
-												<li>Tooth Implants</li>
-												<li>Surgical Extractions</li>
-												<li>Teeth Whitening</li>
-											</ul>
-											<p class="button text-center"><a href="#"
-													class="btn btn-primary px-4 py-3">Get Offer</a>
-											</p>
-										</div>
-									</div>
+											<%})%>
 								</div>
 							</div>
 						</div>
+						<%})%>
 
 					</div>
 				</div>
@@ -196,18 +160,16 @@
 			<div class="row ftco-animate justify-content-center">
 				<div class="col-md-7">
 					<div class="pt-5 mt-5" style="padding-top: 0 !important;margin-top:0 !important;">
-						<h3 class="mb-5 h4 font-weight-bold">Comments:</h3>
+						<h3 class="mb-5 h4 font-weight-bold">最有價值的留言:</h3>
 						<ul class="comment-list">
 							<% var i=0%>
-							<% i=f(blog_data.data[0].reply, i)%>
+							<% i=f(comment.data, i)%>
 							<% function f(arr, i){%>
 							<% if(i!=0){%>
-							<ul class="children" style="padding-top: 0;">
-								<% }%>
-								<% if(arr.length!=0){%>
-								<% arr.forEach(obj=>{%>
-
-								<% i=i+1%>
+								<ul class="children" style="padding-top: 0;">
+							<% }%>
+							<% i=i+1%>
+							<% arr.forEach(obj=>{%>
 								<li class="comment">
 									<div class="vcard bio">
 										<img src="imgs/person_1.jpg" alt="Image placeholder">
@@ -222,12 +184,11 @@
 										</p>
 									</div>
 								</li>
-
-								<% i=f(obj["reply"],i)%>
-								<%}) %>
-								<% }%>
-								<% if(i!=0){%>
-							</ul>
+							
+								<%i=f(obj.reply, i)%>
+							<%})%>
+							<% if(i!=0){%>
+								</ul>
 							<% }%>
 							<% return i; }%>
 
@@ -235,45 +196,42 @@
 					</div>
 				</div>
 				<div class="col-md-5">
-					<div class="pt-5 mt-5" style="padding-top: 0 !important;margin-top:0 !important;">
-						<h3 class="mb-5 h4 font-weight-bold">Comments:</h3>
-						<ul class="comment-list">
-							<% var i=0%>
-							<% i=f(blog_data.data[0].reply, i)%>
-							<% function f(arr, i){%>
-							<% if(i!=0){%>
-							<ul class="children" style="padding-top: 0;">
-								<% }%>
-								<% if(arr.length!=0){%>
-								<% arr.forEach(obj=>{%>
-
-								<% i=i+1%>
-								<li class="comment">
-									<div class="vcard bio">
-										<img src="imgs/person_1.jpg" alt="Image placeholder">
-									</div>
-									<div class="comment-body">
-										<h3>John Doe</h3>
-										<div class="meta mb-2">January 03, 2019 at 2:21pm</div>
-										<p><%-obj.context%></p>
-										<p>
-											<a id="modal-reply<%= i%>" href="#modal-container-reply<%= i%>"
-												role="button" class="reply" data-toggle="modal">Reply</a>
-										</p>
-									</div>
-								</li>
-
-								<% i=f(obj["reply"],i)%>
-								<%}) %>
-								<% }%>
+						<div class="pt-5 mt-5" style="padding-top: 0 !important;margin-top:0 !important;">
+							<h3 class="mb-5 h4 font-weight-bold">最新留言:</h3>
+							<ul class="comment-list">
+								<% var i=0%>
+								<% i=f(comment.data, i)%>
+								<% function f(arr, i){%>
 								<% if(i!=0){%>
-							</ul>
-							<% }%>
-							<% return i; }%>
-
-							<!-- END comment-list -->
+									<ul class="children" style="padding-top: 0;">
+								<% }%>
+								<% i=i+1%>
+								<% arr.forEach(obj=>{%>
+									<li class="comment">
+										<div class="vcard bio">
+											<img src="imgs/person_1.jpg" alt="Image placeholder">
+										</div>
+										<div class="comment-body">
+											<h3>John Doe</h3>
+											<div class="meta mb-2">January 03, 2019 at 2:21pm</div>
+											<p><%-obj.context%></p>
+											<p>
+												<a id="modal-reply<%= i%>" href="#modal-container-reply<%= i%>"
+													role="button" class="reply" data-toggle="modal">Reply</a>
+											</p>
+										</div>
+									</li>
+								
+									<%i=f(obj.reply, i)%>
+								<%})%>
+								<% if(i!=0){%>
+									</ul>
+								<% }%>
+								<% return i; }%>
+	
+								<!-- END comment-list -->
+						</div>
 					</div>
-				</div>
 			</div>
 		</div>
 	</section>
