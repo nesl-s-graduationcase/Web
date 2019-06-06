@@ -19,32 +19,34 @@ router.get('/', function (req, res, next) {
 						funcLib.get_blog_tag(id).then(blog_tag => {
 							funcLib.get_latest_blogs(blog_data.data[0].blog_title).then(latest_blogs => {
 								funcLib.get_recommend_blog().then(recommend_blog => {
-									var ds = recommend_blog.data;
-									var arr2d = []
-									var arr = []
-									if (ds.length > 3) {
-										for (var i = 0; i < ds.length; i++) {
-											arr.push(ds[i])
-											if (i % 3 == 0) {
-												arr2d.push(arr)
-												arr = []
+									funcLib.get_recommend_comment(id).then(recommend_blog => {
+										var ds = recommend_blog.data;
+										var arr2d = []
+										var arr = []
+										if (ds.length > 3) {
+											for (var i = 0; i < ds.length; i++) {
+												arr.push(ds[i])
+												if (i % 3 == 0) {
+													arr2d.push(arr)
+													arr = []
+												}
 											}
+										}else{
+											arr2d.push(ds)
 										}
-									}else{
-										arr2d.push(ds)
-									}
-									recommend_blog.data = arr2d
-
-									res.render('blog-single', {
-										blog_data: blog_data,
-										impt_tag_table: impt_tag_table,
-										recommend_tag_table: recommend_tag_table,
-										user_set: user_set,
-										blog_tag: blog_tag,
-										latest_blogs: latest_blogs,
-										comment: comment,
-										recommend_blog: recommend_blog
-									});
+										recommend_blog.data = arr2d
+	
+										res.render('blog-single', {
+											blog_data: blog_data,
+											impt_tag_table: impt_tag_table,
+											recommend_tag_table: recommend_tag_table,
+											user_set: user_set,
+											blog_tag: blog_tag,
+											latest_blogs: latest_blogs,
+											comment: comment,
+											recommend_blog: recommend_blog
+										});
+									})
 								})
 							})
 						})

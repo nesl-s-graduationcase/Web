@@ -17,6 +17,46 @@
                 <h2 class="mb-4">題組市場</h2>
                 <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</p>
               </div>
+              <div class="col-md-4">
+                  <!-- Example Notifications Card-->
+                  <div class="card-header">
+                    <i class="fab fa-github"></i> GitHub</div>
+                  <div class="list-group list-group-flush small">
+                    <% if(arr.length==0){ %>
+                    您在一個小時內訪問了60次，超過API流量限制，因此無法顯示Commits
+                    <% } %>
+                    <% for(var i=0;i<arr.length;i++){ %>
+                    <a class="list-group-item list-group-item-action" href="<%= arr[i].html_url %>">
+                      <div class="media">
+                        <% if(arr[i].author!=null){ %>
+                        <img class="d-flex mr-3 rounded-circle" src="<%= arr[i].author.avatar_url %>" alt=""
+                          style="float:left;width: 70px;">
+                        <div class="media-body" style="float:left;width: calc(100% - 70px);padding-left:10px">
+                          <i class="far fa-arrow-alt-circle-right"></i>
+                          <%= sha_arr[i] %>-
+                          <strong><%= arr[i].commit.author.name %></strong>
+                          <br><%= arr[i].commit.message %>
+                          <div class="text-muted smaller"><%= arr[i].commit.author.date %></div>
+                        </div>
+                        <% }else{ %>
+                          <div class="media-body" style="float:left;width: calc(100% - 70px);padding-left:10px">
+                            <i class="far fa-arrow-alt-circle-right"></i>
+                            <%= sha_arr[i] %>-
+                            <strong></strong>
+                            <br><%= arr[i].commit.message %>
+                            <div class="text-muted smaller"></div>
+                          </div>
+                          <% } %>
+                      </div>
+                    </a>
+                    <% }; %>
+        
+        
+                    <a class="list-group-item list-group-item-action"
+                      href="https://github.com/neslxzhen/GraduationCase/commits/master">View all
+                      activity...</a>
+                  </div>
+                </div>
             </div>
             <div class="ftco-departments">
               <div class="row">
