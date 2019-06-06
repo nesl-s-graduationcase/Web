@@ -50,8 +50,8 @@ var user = async function (id) {
   return do_query("SELECT * FROM `user` where user_id='"+id+"';");
 }
 
-// todo 用blog_id查詢最近更新
-var get_latest_blogs = async function (id) {
+// 用關鍵字查詢最近更新
+var get_latest_blogs = async function (s) {
   return do_query("select * from blog where blog_title like '%"+s+"%' ORDER BY last_update DESC limit 3;");
 }
 
@@ -70,6 +70,11 @@ var get_offer_blogs = async function () {
   return do_query("select * from blog where blog_title like '%"+s+"%' ORDER BY last_update DESC limit 3;");
 }
 
+// TODO 最有價值留言
+var get_recommend_comment = async function (blog_id) {
+  return do_query("select * from reply where blog_id=" + blog_id + ";");
+}
+
 var search_blog_by_tag= async function (s,pageNo) {
   var result = {};
   const linePerPage = 12;    //設定每頁資料筆數
@@ -78,7 +83,7 @@ var search_blog_by_tag= async function (s,pageNo) {
   var totalPage=0;
   var totalLine=0;
 
-  var s2="from (SELECT blog_tag.blog_id from tag right join blog_tag on tag.tag_id=blog_tag.tag_id where tag.tag_title like '%"+s+"%') as f JOIN combination on f.blog_id=combination.blog_id"
+  var s2="from (SELECT blog_tag.blog_id from tag right join blog_tag on tag.tag_id=blog_tag.tag_id where tag.tag_title like '%"+s+"%') as f JOIN blog on f.blog_id=blog.blog_id"
   await query("SELECT count(*) as cnt "+s2+";")
     .then((data) => {
       totalLine = data[0].cnt;

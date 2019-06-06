@@ -18,7 +18,13 @@
               <div class="text bg-white p-4">
                 <h3 class="heading"><a href="#"></a><%=d.blog_title%></a></h3>
                 <%if(typeof d.body_html != null){%>
-                <%- d.short_html%>
+                  <%
+								function delHtmlTag(str){
+									return d.short_html.replace(/<[^>]+>/g,"");//去掉所有的html標記
+								  }
+									var sTest = delHtmlTag(d.short_html).substring(10,30);
+								%>
+								<%= sTest %>
                 <%}%>
                 <div class="d-flex align-items-center mt-4">
 	                <p class="mb-0"><a href="/blog-single?id=<%=d.blog_id%>" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
